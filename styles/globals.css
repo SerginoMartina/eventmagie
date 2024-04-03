@@ -2,32 +2,249 @@
 @tailwind components;
 @tailwind utilities;
 
+/* globals.css */
+
+/* Define custom theme variables */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    /* Colors */
+    --primary-color: #4a90e2;
+    --secondary-color: #f9a11b;
+    --text-color: #333333;
+    --background-color: #ffffff;
+    --border-color: #e2e8f0;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --error-color: #dc3545;
+    --dark-color: #333333;
+    --light-color: #f8f9fa;
+    
+    /* Fonts */
+    --font-family-sans: 'Inter', sans-serif;
+    --font-family-serif: 'Georgia', serif;
+  
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+  
+    /* Border radius */
+    --border-radius-default: 0.25rem;
+    --border-radius-lg: 0.5rem;
+  
+    /* Box shadow */
+    --box-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --box-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --box-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  
+    /* Z-index */
+    --zindex-dropdown: 1000;
+    --zindex-sticky: 1020;
+    --zindex-fixed: 1030;
+    --zindex-modal-backdrop: 1040;
+    --zindex-modal: 1050;
+  
+    /* Breakpoints */
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+
+    --blush-color-1: rgba(138, 43, 226, 0.8); /* Blue */
+    --blush-color-2: rgba(128, 0, 128, 0.8); /* Purple */
+    --blush-color-3: rgba(0, 0, 255, 0.5); /* Another Blue */
+  }
+  
+  /* Apply custom theme variables */
+  body {
+    font-family: var(--font-family-sans);
+    color: var(--text-color);
+    background-color: var(--background-color);
+  }
+  
+  /* Additional custom styles for Tailwind components */
+  /* Example: Style for Tailwind button component */
+  .btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-default);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+  }
+  
+  .btn-primary:hover {
+    background-color: darken(var(--primary-color), 10%);
+  }
+  
+  .btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+  }
+  
+  .btn-secondary:hover {
+    background-color: darken(var(--secondary-color), 10%);
+  }
+  
+  /* Style for Tailwind input component */
+  .input {
+    padding: var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-default);
+  }
+  
+  /* Style for Tailwind textarea component */
+  .textarea {
+    padding: var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-default);
+  }
+  
+  /* Style for Tailwind card component */
+  .card {
+    padding: var(--spacing-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-default);
+    box-shadow: var(--box-shadow-sm);
+  }
+  
+/* Styles for Blushes */
+.blushes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensure the blushes don't interfere with mouse events */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.blush {
+    width: 20rem;
+    height: 20rem;
+    background-color: #f48fb1; /* Blush color */
+    border-radius: 50%; /* Rounded shape */
+    animation: blushAnimation 20s ease-in-out infinite; /* Animation */
+}
+
+@keyframes blushAnimation {
+    0% { 
+        border-radius: 50% 20% 70% 50% / 60% 30% 50% 70%; 
+        background: radial-gradient(circle, rgba(222,94,243,1) 0%, rgba(255,255,255,1) 100%)
+    }
+    10% { 
+        border-radius: 20% 60% 70% 50% / 30% 30% 40% 50%; 
+    }
+    20% { 
+        border-radius: 40% 50% 60% 40% / 60% 30% 70% 40%; 
+    }
+    30% { 
+        border-radius: 20% 80% 70% 50% / 40% 50% 30% 50%; 
+    }
+    40% { 
+        border-radius: 20% 80% 50% 70% / 30% 60% 70% 40%; 
+    }
+    50% { 
+        border-radius: 40% 60% 70% 50% / 40% 30% 70% 40%; 
+    }
+    60% { 
+        border-radius: 60% 50% 60% 40% / 30% 60% 70% 40%; 
+    }
+    70% { 
+        border-radius: 20% 80% 50% 50% / 60% 30% 50% 70%; 
+    }
+    80% { 
+        border-radius: 40% 60% 70% 50% / 60% 30% 50% 70%; 
+    }
+    90% { 
+        border-radius: 60% 50% 60% 40% / 60% 30% 50% 70%; 
+    }
+    100% { 
+        border-radius: 40% 60%; 
+    }
+}
+
+.blush1 {
+    position: absolute;
+    top: -50px;
+    left: -50px;
+}
+
+.blush2 {
+    position: absolute;
+    top: 50vh;
+    right: -50px;
+    background: radial-gradient(circle, rgba(128, 0, 128, 0.8), rgba(138, 43, 226, 0.8)); /* Purple and blue gradient */
+}
+
+.blush3 {
+    position: absolute;
+    top: 110vh;
+    left: -50px;
+}
+
+/* Splashscreen */
+@keyframes jumbo {
+  from {
+      background-position: 50% 50%, 50% 50%;
+  }
+  to {
+      background-position: 350% 50%, 350% 50%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.jumbo {
+  --stripes: repeating-linear-gradient(
+      100deg,
+      #fff 0%,
+      #fff 7%,
+      transparent 10%,
+      transparent 12%,
+      #fff 16%
+  );
+  --stripesDark: repeating-linear-gradient(
+      100deg,
+      #000 0%,
+      #000 7%,
+      transparent 10%,
+      transparent 12%,
+      #000 16%
+  );
+  --rainbow: repeating-linear-gradient(
+      100deg,
+      #60a5fa 10%,
+      #e879f9 15%,
+      #60a5fa 20%,
+      #5eead4 25%,
+      #60a5fa 30%
+  );
+  background-image: var(--stripes), var(--rainbow);
+  background-size: 300%, 200%;
+  background-position: 50% 50%, 50% 50%;
+
+  filter: blur(10px) invert(100%);
+
+  mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
+
+  pointer-events: none;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.jumbo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--stripes), var(--rainbow);
+  background-size: 200%, 100%;
+  animation: jumbo 60s linear infinite;
+  background-attachment: fixed;
+  mix-blend-mode: difference;
 }
+

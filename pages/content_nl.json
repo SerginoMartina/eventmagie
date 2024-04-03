@@ -1,0 +1,37 @@
+{
+  "header": {
+    "title": "Welkom bij Event Magie",
+    "subtitle": "Uw partner voor onvergetelijke evenementen"
+  },
+  "services": {
+    "title": "Onze Diensten",
+    "items": [
+      {
+        "title": "Evenementplanning",
+        "description": "Wij helpen u bij het plannen en organiseren van uw evenement, van concept tot uitvoering."
+      },
+      {
+        "title": "Decoratie",
+        "description": "Laat uw evenement opvallen met onze unieke decoratie-opties en thematische inrichting."
+      },
+      {
+        "title": "Entertainment",
+        "description": "Van live muziek tot artiesten en speciale acts, wij zorgen voor entertainment van topklasse."
+      }
+    ]
+  },
+  "about": {
+    "title": "Over Ons",
+    "description": "Event Magie is een toonaangevend evenementenbureau dat gespecialiseerd is in het creëren van magische momenten. Met een team van ervaren professionals streven we ernaar om elk evenement onvergetelijk te maken."
+  },
+  "storePromotion": {
+    "title": "Winkel Promotie",
+    "description": "Maak uw winkel evenementen onvergetelijk met onze promotiediensten. Wij helpen u bij het plannen en uitvoeren van speciale promotieacties, productlanceringen, en meer. Neem vandaag nog contact met ons op voor meer informatie."
+  },
+  "contact": {
+    "title": "Contacteer Ons",
+    "description": "Neem contact met ons op voor meer informatie over onze diensten en hoe we uw evenement kunnen verbeteren.",
+    "email": "info@eventmagie.nl",
+    "phone": "+31 123 456 789"
+  }
+}
